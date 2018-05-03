@@ -18,7 +18,6 @@ public class UserBean implements UserBeanLocal {
 	public UserBean() {
 		
 	}
-	
 	public void aggiungiuser (User u) {
 		m.persist(u);
 	}
