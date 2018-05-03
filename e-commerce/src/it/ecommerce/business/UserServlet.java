@@ -30,7 +30,7 @@ public class UserServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		 
 		String vero = request.getParameter("true");
 		if( vero.equals("aggiungi")) {		
 		User u = new User();
