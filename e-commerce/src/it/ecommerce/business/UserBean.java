@@ -10,10 +10,12 @@ import javax.websocket.server.PathParam;
 
 import it.ecommerce.entity.User;
 
+
+
 @Stateless
-@LocalBean
+
 public class UserBean implements UserBeanLocal {
-	@PersistenceContext(unitName="webPersistence")
+	@PersistenceContext(unitName = "e_commerce")
 	 EntityManager m;
 	public UserBean() {
 		
@@ -21,19 +23,4 @@ public class UserBean implements UserBeanLocal {
 	public void aggiungiuser (User u) {
 		m.persist(u);
 	}
-	
-	public void aggiornauser (Long id) {
-		User u= getUserID(id);
-		 m.merge(u);
-	}
-	public void cancellauser (Long id ) {
-		 User u =  getUserID(id);
-		 m.remove(u);
-	}
-	public User getUserID(@PathParam("iduser")Long id) {
-		return m.find(User.class, id);
-	}
-	public List<User>  cercautente(){
-		return m.createQuery("SELECT u FROM User u").getResultList();
-	}
-}
+} 

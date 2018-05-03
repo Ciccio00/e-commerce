@@ -22,9 +22,9 @@ public class User {
        private String city;
        private String address;
        private String cap;
-       private company company;
-       private role role;
-      
+  //     private company company;
+   //    private role role;
+   /*   
      @ManyToMany(cascade =  CascadeType.ALL)
      @JoinColumn(name = "idrole")
      @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -43,7 +43,9 @@ public class User {
 	public void setCompany(company company) {
 		this.company = company;
 	}
+	*/
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "idutente")
 	public Long getId() {
 		return id;
